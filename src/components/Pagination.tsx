@@ -48,10 +48,10 @@ const Pagination = ({
         <div
           key={i}
           className={cn(
-            'w-8 h-8 flex items-center justify-center text-xs cursor-pointer transition-all duration-150 border',
+            'w-9 h-9 flex items-center justify-center text-xs cursor-pointer transition-all duration-200 border-2',
             i === currentPage
-              ? 'bg-black border-[#8B5CF6] text-[#8B5CF6] shadow-[0_0_8px_#8B5CF6] font-bold'
-              : 'bg-[#1A1F2C] border-[#403E43] text-[#8E9196] hover:text-[#D6BCFA] hover:border-[#D6BCFA] hover:shadow-[0_0_5px_#D6BCFA]'
+              ? 'bg-black border-[#c22a30] text-[#c22a30] shadow-[0_0_12px_#c22a30] font-bold scale-110 z-10'
+              : 'bg-[#12080a] border-[#661519] text-[#8E9196] hover:text-[#ff3c44] hover:border-[#ff3c44] hover:shadow-[0_0_8px_#c22a30]'
           )}
           onClick={() => handlePageChange(i)}
         >
@@ -64,18 +64,19 @@ const Pagination = ({
 
   return (
     <div className={cn('flex flex-col items-center gap-4', className)}>
-      <div className="text-xs mb-2 font-mono tracking-wide text-[#8B5CF6] bg-black/50 px-3 py-1 border border-[#403E43]">
-        <span className="text-[#F97316]">[</span> PAGE {currentPage} <span className="text-[#0EA5E9]">/</span> {totalPages} <span className="text-[#F97316]">]</span>
+      <div className="text-xs mb-2 font-mono tracking-widest text-[#c22a30] bg-black px-4 py-1.5 border-2 border-[#661519] relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#c22a30]/10 to-transparent animate-[scanline_4s_linear_infinite] pointer-events-none"></div>
+        <span className="text-[#ff3c44]">[</span> PAGE {currentPage} <span className="text-white">/</span> {totalPages} <span className="text-[#ff3c44]">]</span>
       </div>
       
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-3">
         <RetroButton
           onClick={() => handlePageChange(1)}
           disabled={currentPage === 1}
           title="First Page"
           size="sm"
-          variant="cyberpunk"
-          className="flex items-center justify-center"
+          variant="neon-red"
+          className="flex items-center justify-center w-9 h-9"
         >
           <ChevronFirst size={16} />
         </RetroButton>
@@ -85,13 +86,13 @@ const Pagination = ({
           disabled={currentPage === 1}
           title="Previous Page"
           size="sm"
-          variant="cyberpunk"
-          className="flex items-center justify-center"
+          variant="neon-red"
+          className="flex items-center justify-center w-9 h-9"
         >
           <ChevronLeft size={16} />
         </RetroButton>
         
-        <div className="flex items-center space-x-1">
+        <div className="flex items-center space-x-2">
           {renderPageNumbers()}
         </div>
         
@@ -100,8 +101,8 @@ const Pagination = ({
           disabled={currentPage === totalPages}
           title="Next Page"
           size="sm"
-          variant="cyberpunk"
-          className="flex items-center justify-center"
+          variant="neon-red"
+          className="flex items-center justify-center w-9 h-9"
         >
           <ChevronRight size={16} />
         </RetroButton>
@@ -111,8 +112,8 @@ const Pagination = ({
           disabled={currentPage === totalPages}
           title="Last Page"
           size="sm"
-          variant="cyberpunk"
-          className="flex items-center justify-center"
+          variant="neon-red"
+          className="flex items-center justify-center w-9 h-9"
         >
           <ChevronLast size={16} />
         </RetroButton>

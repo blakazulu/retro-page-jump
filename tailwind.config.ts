@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -127,10 +126,20 @@ export default {
 				},
 				'scanline': {
 					'0%': { 
-						transform: 'translateY(0)' 
+						transform: 'translateY(-100%)' 
 					},
 					'100%': { 
 						transform: 'translateY(100%)' 
+					}
+				},
+				'pulse-red': {
+					'0%, 100%': { 
+						opacity: '1', 
+						boxShadow: '0 0 5px #c22a30' 
+					},
+					'50%': { 
+						opacity: '0.8', 
+						boxShadow: '0 0 15px #ff3c44' 
 					}
 				}
 			},
@@ -139,7 +148,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'pixel-pulse': 'pixel-pulse 1.5s infinite',
 				'glitch': 'glitch 0.2s ease-in-out',
-				'scanline': 'scanline 8s linear infinite'
+				'scanline': 'scanline 8s linear infinite',
+				'pulse-red': 'pulse-red 2s infinite'
 			}
 		}
 	},
