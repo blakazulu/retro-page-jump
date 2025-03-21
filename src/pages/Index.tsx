@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Pagination from '@/components/Pagination';
 import RetroButton from '@/components/RetroButton';
 import { toast } from 'sonner';
-import { Gamepad2, Trophy, Target } from 'lucide-react';
+import { Gamepad2, Trophy, Target, Layout, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // Sample data to paginate
 const generateItems = (count: number) => {
@@ -75,6 +76,17 @@ const Index = () => {
               <div key={i} className="w-1 h-4 bg-[#ff3c44]"></div>
             ))}
           </div>
+        </div>
+        
+        {/* Add showcase link */}
+        <div className="flex justify-end mt-4">
+          <Link 
+            to="/pagination-showcase" 
+            className="flex items-center text-[#c22a30] hover:text-[#ff3c44] transition-colors font-mono text-sm"
+          >
+            View All Pagination Styles
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
         </div>
       </header>
       
