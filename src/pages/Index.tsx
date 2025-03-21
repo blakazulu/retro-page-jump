@@ -8,8 +8,8 @@ import { toast } from 'sonner';
 const generateItems = (count: number) => {
   return Array.from({ length: count }, (_, i) => ({
     id: i + 1,
-    title: `Retro Item ${i + 1}`,
-    description: `This is a retro-styled item #${i + 1}. Perfect for showcasing our pagination!`
+    title: `Cyber Item ${i + 1}`,
+    description: `This is a cyberpunk-styled item #${i + 1}. Perfect for showcasing our pagination system!`
   }));
 };
 
@@ -45,26 +45,28 @@ const Index = () => {
   };
   
   return (
-    <div className="min-h-screen bg-retro-background text-retro-text flex flex-col items-center p-4 md:p-8 scanline">
+    <div className="min-h-screen bg-[#121212] text-[#e0e0e0] flex flex-col items-center p-4 md:p-8">
       <header className="w-full max-w-4xl mb-10 mt-8">
-        <h1 className="retro-text text-xl md:text-3xl text-retro-primary text-center">RETRO PAGINATION</h1>
-        <div className="w-full h-1 bg-retro-primary mt-4 relative">
+        <h1 className="font-mono text-xl md:text-3xl text-[#8B5CF6] text-center tracking-wider uppercase">
+          Cyberpunk Pagination
+        </h1>
+        <div className="w-full h-[2px] bg-gradient-to-r from-[#D946EF] via-[#8B5CF6] to-[#0EA5E9] mt-4 relative">
           <div className="absolute -top-2 left-0 w-full flex justify-between px-4">
-            {Array.from({ length: 20 }).map((_, i) => (
-              <div key={i} className="w-1 h-4 bg-retro-primary"></div>
+            {Array.from({ length: 5 }).map((_, i) => (
+              <div key={i} className="w-1 h-4 bg-[#F97316]"></div>
             ))}
           </div>
         </div>
       </header>
       
       <main className="w-full max-w-4xl flex-1 flex flex-col">
-        <div className="border-2 border-retro-primary p-6 mb-8 bg-retro-muted/20 backdrop-blur-sm">
-          <h2 className="retro-text text-lg text-retro-accent mb-6">DATABASE RECORDS</h2>
+        <div className="border border-[#403E43] p-6 mb-8 bg-[#1A1F2C] backdrop-blur-sm">
+          <h2 className="font-mono text-lg text-[#D946EF] mb-6 uppercase tracking-wider">Database Records</h2>
           
           {loading ? (
             <div className="flex flex-col gap-4">
               {Array.from({ length: 5 }).map((_, i) => (
-                <div key={i} className="h-20 bg-retro-muted/30 animate-pulse"></div>
+                <div key={i} className="h-20 bg-[#222222]/50 animate-pulse"></div>
               ))}
             </div>
           ) : (
@@ -72,17 +74,17 @@ const Index = () => {
               {currentItems.map((item) => (
                 <div
                   key={item.id}
-                  className="border border-retro-primary p-4 hover:bg-retro-muted/30 transition-all duration-200"
+                  className="border border-[#403E43] p-4 hover:border-[#8B5CF6] hover:shadow-[0_0_8px_rgba(139,92,246,0.3)] transition-all duration-200 bg-black/30"
                 >
                   <div className="flex justify-between items-start">
-                    <h3 className="retro-text text-sm text-retro-secondary">{item.title}</h3>
-                    <span className="retro-text text-xs text-retro-accent">ID: {item.id}</span>
+                    <h3 className="font-mono text-sm text-[#0EA5E9]">{item.title}</h3>
+                    <span className="font-mono text-xs text-[#F97316]">ID: {item.id}</span>
                   </div>
-                  <p className="mt-3 text-sm">{item.description}</p>
+                  <p className="mt-3 text-sm text-[#8E9196]">{item.description}</p>
                   <div className="mt-3 flex justify-end">
                     <RetroButton
                       size="sm"
-                      variant="accent"
+                      variant="cyberpunk"
                       onClick={() => toast.info(`Selected item ${item.id}`)}
                     >
                       SELECT
@@ -103,9 +105,9 @@ const Index = () => {
         </div>
       </main>
       
-      <footer className="w-full max-w-4xl mt-auto border-t-2 border-retro-primary pt-6 pb-4">
-        <p className="retro-text text-xs text-center text-retro-primary">
-          RETRO PAGINATION SYSTEM v1.0
+      <footer className="w-full max-w-4xl mt-auto border-t border-[#403E43] pt-6 pb-4">
+        <p className="font-mono text-xs text-center text-[#8B5CF6]">
+          CYBERPUNK PAGINATION SYSTEM v1.0
         </p>
       </footer>
     </div>

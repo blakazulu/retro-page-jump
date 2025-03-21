@@ -3,7 +3,7 @@ import React from 'react';
 import { cn } from '@/lib/utils';
 
 interface RetroButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'accent';
+  variant?: 'primary' | 'secondary' | 'accent' | 'cyberpunk';
   size?: 'sm' | 'md' | 'lg';
   glitch?: boolean;
 }
@@ -24,6 +24,8 @@ const RetroButton = ({
         return 'bg-retro-muted text-retro-secondary border-retro-secondary hover:bg-black';
       case 'accent':
         return 'bg-retro-muted text-retro-accent border-retro-accent hover:bg-black';
+      case 'cyberpunk':
+        return 'bg-[#1A1F2C] text-[#8B5CF6] border-[#403E43] hover:bg-black hover:border-[#D6BCFA] hover:text-[#D6BCFA] hover:shadow-[0_0_8px_#8B5CF6] disabled:opacity-50 disabled:hover:shadow-none disabled:hover:border-[#403E43] disabled:hover:text-[#6E59A5] transition-all duration-150';
       default:
         return 'bg-retro-muted text-retro-primary border-retro-primary hover:bg-black';
     }

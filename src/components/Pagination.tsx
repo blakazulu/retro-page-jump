@@ -48,10 +48,10 @@ const Pagination = ({
         <div
           key={i}
           className={cn(
-            'w-8 h-8 flex items-center justify-center retro-text text-xs cursor-pointer transition-all duration-150',
+            'w-8 h-8 flex items-center justify-center text-xs cursor-pointer transition-all duration-150 border',
             i === currentPage
-              ? 'bg-retro-primary text-retro-background animate-pixel-pulse'
-              : 'bg-retro-muted text-retro-text hover:bg-retro-muted/70'
+              ? 'bg-black border-[#8B5CF6] text-[#8B5CF6] shadow-[0_0_8px_#8B5CF6] font-bold'
+              : 'bg-[#1A1F2C] border-[#403E43] text-[#8E9196] hover:text-[#D6BCFA] hover:border-[#D6BCFA] hover:shadow-[0_0_5px_#D6BCFA]'
           )}
           onClick={() => handlePageChange(i)}
         >
@@ -64,8 +64,8 @@ const Pagination = ({
 
   return (
     <div className={cn('flex flex-col items-center gap-4', className)}>
-      <div className="retro-text text-retro-primary text-xs mb-2">
-        PAGE {currentPage} OF {totalPages}
+      <div className="text-xs mb-2 font-mono tracking-wide text-[#8B5CF6] bg-black/50 px-3 py-1 border border-[#403E43]">
+        <span className="text-[#F97316]">[</span> PAGE {currentPage} <span className="text-[#0EA5E9]">/</span> {totalPages} <span className="text-[#F97316]">]</span>
       </div>
       
       <div className="flex items-center space-x-2">
@@ -74,6 +74,7 @@ const Pagination = ({
           disabled={currentPage === 1}
           title="First Page"
           size="sm"
+          variant="cyberpunk"
           className="flex items-center justify-center"
         >
           <ChevronFirst size={16} />
@@ -84,12 +85,13 @@ const Pagination = ({
           disabled={currentPage === 1}
           title="Previous Page"
           size="sm"
+          variant="cyberpunk"
           className="flex items-center justify-center"
         >
           <ChevronLeft size={16} />
         </RetroButton>
         
-        <div className="flex items-center">
+        <div className="flex items-center space-x-1">
           {renderPageNumbers()}
         </div>
         
@@ -98,6 +100,7 @@ const Pagination = ({
           disabled={currentPage === totalPages}
           title="Next Page"
           size="sm"
+          variant="cyberpunk"
           className="flex items-center justify-center"
         >
           <ChevronRight size={16} />
@@ -108,6 +111,7 @@ const Pagination = ({
           disabled={currentPage === totalPages}
           title="Last Page"
           size="sm"
+          variant="cyberpunk"
           className="flex items-center justify-center"
         >
           <ChevronLast size={16} />
