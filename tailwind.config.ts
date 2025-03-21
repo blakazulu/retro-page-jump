@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -141,6 +142,33 @@ export default {
 						opacity: '0.8', 
 						boxShadow: '0 0 15px #ff3c44' 
 					}
+				},
+				'hexagon-rotate': {
+					'0%': {
+						transform: 'rotate(0deg)'
+					},
+					'100%': {
+						transform: 'rotate(360deg)'
+					}
+				},
+				'health-pulse': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.7'
+					}
+				},
+				'flicker': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'33%': {
+						opacity: '0.9'
+					},
+					'66%': {
+						opacity: '0.94'
+					}
 				}
 			},
 			animation: {
@@ -149,7 +177,10 @@ export default {
 				'pixel-pulse': 'pixel-pulse 1.5s infinite',
 				'glitch': 'glitch 0.2s ease-in-out',
 				'scanline': 'scanline 8s linear infinite',
-				'pulse-red': 'pulse-red 2s infinite'
+				'pulse-red': 'pulse-red 2s infinite',
+				'hexagon-rotate': 'hexagon-rotate 10s linear infinite',
+				'health-pulse': 'health-pulse 2s ease-in-out infinite',
+				'flicker': 'flicker 2s linear infinite'
 			}
 		}
 	},
