@@ -21,7 +21,7 @@ export const SpacePagination = ({
     if (initialPage !== currentPage) {
       setCurrentPage(initialPage);
     }
-  }, [initialPage]);
+  }, [initialPage, currentPage]);
 
   const handlePageChange = (newPage: number) => {
     if (newPage < 1 || newPage > totalPages) return;
@@ -53,7 +53,7 @@ export const SpacePagination = ({
   return (
     <div className={cn('rounded-2xl bg-[#222639] p-4 border border-[#403E43] shadow-[0_0_15px_rgba(0,0,0,0.3)] relative overflow-hidden', className)}>
       {/* Star field background */}
-      <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\"><rect width=\"200\" height=\"200\" fill=\"black\"/><g fill=\"white\"><circle cx=\"20\" cy=\"30\" r=\"1\"/><circle cx=\"40\" cy=\"80\" r=\"0.5\"/><circle cx=\"60\" cy=\"10\" r=\"0.7\"/><circle cx=\"80\" cy=\"90\" r=\"0.8\"/><circle cx=\"100\" cy=\"50\" r=\"1\"/><circle cx=\"120\" cy=\"20\" r=\"0.6\"/><circle cx=\"140\" cy=\"70\" r=\"0.4\"/><circle cx=\"160\" cy=\"40\" r=\"0.9\"/><circle cx=\"180\" cy=\"60\" r=\"0.7\"/><circle cx=\"10\" cy=\"100\" r=\"0.5\"/><circle cx=\"30\" cy=\"150\" r=\"1\"/><circle cx=\"50\" cy=\"180\" r=\"0.8\"/><circle cx=\"70\" cy=\"130\" r=\"0.6\"/><circle cx=\"90\" cy=\"170\" r=\"0.7\"/><circle cx=\"110\" cy=\"120\" r=\"0.4\"/><circle cx=\"130\" cy=\"160\" r=\"1\"/><circle cx=\"150\" cy=\"110\" r=\"0.5\"/><circle cx=\"170\" cy=\"140\" r=\"0.9\"/><circle cx=\"190\" cy=\"190\" r=\"0.8\"/></g></svg>')]"></div>
+      <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22black%22%2F%3E%3Cg%20fill%3D%22white%22%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2230%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%2240%22%20cy%3D%2280%22%20r%3D%220.5%22%2F%3E%3Ccircle%20cx%3D%2260%22%20cy%3D%2210%22%20r%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%2280%22%20cy%3D%2290%22%20r%3D%220.8%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%2250%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%2220%22%20r%3D%220.6%22%2F%3E%3Ccircle%20cx%3D%22140%22%20cy%3D%2270%22%20r%3D%220.4%22%2F%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%2240%22%20r%3D%220.9%22%2F%3E%3Ccircle%20cx%3D%22180%22%20cy%3D%2260%22%20r%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%2210%22%20cy%3D%22100%22%20r%3D%220.5%22%2F%3E%3Ccircle%20cx%3D%2230%22%20cy%3D%22150%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%22180%22%20r%3D%220.8%22%2F%3E%3Ccircle%20cx%3D%2270%22%20cy%3D%22130%22%20r%3D%220.6%22%2F%3E%3Ccircle%20cx%3D%2290%22%20cy%3D%22170%22%20r%3D%220.7%22%2F%3E%3Ccircle%20cx%3D%22110%22%20cy%3D%22120%22%20r%3D%220.4%22%2F%3E%3Ccircle%20cx%3D%22130%22%20cy%3D%22160%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%22150%22%20cy%3D%22110%22%20r%3D%220.5%22%2F%3E%3Ccircle%20cx%3D%22170%22%20cy%3D%22140%22%20r%3D%220.9%22%2F%3E%3Ccircle%20cx%3D%22190%22%20cy%3D%22190%22%20r%3D%220.8%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E')]"></div>
       
       <div className="flex items-center justify-between space-x-3">
         <button

@@ -21,7 +21,7 @@ export const FantasyPagination = ({
     if (initialPage !== currentPage) {
       setCurrentPage(initialPage);
     }
-  }, [initialPage]);
+  }, [initialPage, currentPage]);
 
   const handlePageChange = (newPage: number) => {
     if (newPage < 1 || newPage > totalPages) return;
@@ -36,7 +36,7 @@ export const FantasyPagination = ({
     <div className={cn('flex flex-col items-center', className)}>
       <div className="relative w-64 h-16 bg-[#FEF7CD] rounded-lg overflow-hidden border-4 border-[#1A1F2C] shadow-lg">
         {/* Parchment texture */}
-        <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\"><rect width=\"100\" height=\"100\" fill=\"none\" stroke=\"%23D4A76A\" stroke-width=\"0.5\"/></svg>')]"></div>
+        <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%22%20height%3D%22100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22none%22%20stroke%3D%22%23D4A76A%22%20stroke-width%3D%220.5%22%2F%3E%3C%2Fsvg%3E')]"></div>
         
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="flex space-x-2">
