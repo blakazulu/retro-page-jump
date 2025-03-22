@@ -1,6 +1,6 @@
+
 import React, { useState } from 'react';
 import Pagination from '@/components/Pagination';
-import RetroButton from '@/components/RetroButton';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Layout } from 'lucide-react';
 import { ClassicPagination } from '@/components/pagination/ClassicPagination';
